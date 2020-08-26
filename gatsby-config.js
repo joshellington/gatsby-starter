@@ -13,6 +13,7 @@ module.exports = {
     description: `joshellington.com`,
     author: `@joshellington`,
     siteUrl: `https://joshellington.com`,
+    image: `https://joshellington.com/share.png`,
   },
   plugins: [
     { resolve: `gatsby-plugin-react-helmet` },

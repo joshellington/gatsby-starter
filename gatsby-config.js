@@ -1,11 +1,14 @@
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
 console.log(`!!! ACTIVE_ENV: ${activeEnv}`)
 
 require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
-const targetAddress = new URL(process.env.TARGET_ADDRESS || `https://joshellington.com`);
+const targetAddress = new URL(
+  process.env.TARGET_ADDRESS || `https://joshellington.com`
+)
 
 module.exports = {
   siteMetadata: {
@@ -14,6 +17,7 @@ module.exports = {
     author: `@joshellington`,
     siteUrl: `https://joshellington.com`,
     image: `https://joshellington.com/share.png`,
+    keywords: ``,
   },
   plugins: [
     { resolve: `gatsby-plugin-react-helmet` },
@@ -21,8 +25,8 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "fonts",
-        path: `${__dirname}/src/fonts/`
-      }
+        path: `${__dirname}/src/fonts/`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -35,8 +39,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: targetAddress.href.slice(0, -1)
-      }
+        siteUrl: targetAddress.href.slice(0, -1),
+      },
     },
-  ]
+  ],
 }
